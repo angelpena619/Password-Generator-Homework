@@ -1,17 +1,21 @@
 # 03 JavaScript: Password Generator
+for this homework assignment we where asked to set up a number of window prompts to determine a desired password based on the criteria.
 
+user was asked to pick numbers between 8-128 characters, after user selects approved number of characters it will follow 4 prompts, user must select at least one prompt to
+generate a random password generate with the desired number of characters.
 
+user has option to include:
+passwrod with all upper case
+or
+password with all lower case
+or 
+password with all numbers 
+or
+password with all special characters
 
+user must have at least one criteria selected to generate password
 
-
-
-! [screenshot](screenshot-password-gen.PNG)
-
-
-
-
-
-
+user may also have all 4 criteria to generate a password.
 
 ## User Story
 
@@ -40,3 +44,5 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ``
+
+! [screenshot](screenshot-password-gen.PNG)

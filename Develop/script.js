@@ -1,6 +1,7 @@
 // Assignment Code 
 var generateBtn = document.querySelector("#generate");
 
+// all declared variables are listed below...
 var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -12,6 +13,8 @@ var numbersConfirm = false;
 var userChoice = [];
 var passwordLength = 0;
 var finalPassword = "";
+
+// Worked with tutor to create a "while loop" function to circulate through the prompts, to select desired outcome for password criteria.
 
 function generatePassword() {
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -52,6 +55,8 @@ function generatePassword() {
   }
   return finalPassword;
   }
+
+  // created random array variable to generate random values to display in html document.
 
   function rgen (randomArray){
    var randomIndex = Math.floor(Math.random() * randomArray.length)

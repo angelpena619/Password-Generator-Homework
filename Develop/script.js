@@ -1,50 +1,70 @@
-// Assignment Code this was at the top
+// Assignment Code 
 var generateBtn = document.querySelector("#generate");
 
-
-
-// Var Arrays
 var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["@", "#", "$", "%", "^", "&", "*", "(", ")", ",", "-", "_", "=", "+"];
-var userinput;
-
-var upperCaseConfirm;
-var lowerCaseConfirm;
-var specialCharConfirm;
-var numbersConfirm;
-
-// Var Arrays
-
-// Below are the prompts function 
-
+var upperCaseConfirm = false;
+var lowerCaseConfirm = false;
+var specialCharConfirm = false;
+var numbersConfirm = false;
+var userChoice = [];
+var passwordLength = 0;
+var finalPassword = "";
 
 function generatePassword() {
-  userinput = prompt ("How Many characters would you like your password to contanin? choose between 8 and 28");
-  upperCaseConfirm = window.confirm("")
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+        passwordLength = prompt("How Many characters would you like your password to contanin? choose between 8 and 128 characters");
+        alert("Cannot leave blank, a value is required!");
+  }
 
-}
+  while (!upperCaseConfirm || !lowerCaseConfirm || !specialCharConfirm || !numbersConfirm) {
+    alert("you must choose!");
+    upperCaseConfirm = confirm("would you like to include upper case letters?");
+    lowerCaseConfirm = confirm("would you like to include lower case letters?");
+    specialCharConfirm = confirm("would you like to include special characters?");
+    numbersConfirm = confirm("would you like to include numbers?");
+  }
 
-function generatePassword() {
-  userinput = prompt("How many characters would you like your password to be? Choose between 8 and 128");
-  upperCaseConfirm = window.confirm("Would you like to use upper case letters?");
-  lowerCaseConfirm = window.confirm("Would you like to use lower case letters?");
-  specialCharConfirm = window.confirm("Would you like to use special characters?");
-  numbersConfirm = window.confirm("Would you like to use numbers?");
-}
+  if (upperCaseConfirm) {
+    userChoice = userChoice.concat(upperCaseLetters);
+    finalPassword += rgen (upperCaseLetters); 
+  }
+  
+  if (lowerCaseConfirm) {
+    userChoice = userChoice.concat(lowerCaseLetters);
+    finalPassword += rgen (lowerCaseLetters); 
+  }
+  if (specialCharConfirm) {
+    userChoice = userChoice.concat(specialCharacters);
+    finalPassword += rgen (specialCharacters); 
+  }
+  if (numbersConfirm) {
+    userChoice = userChoice.concat(numbers);
+    finalPassword += rgen (numbers); 
+  }
+
+  for (var i=finalPassword.length; i<passwordLength; i++) {
+    finalPassword += rgen (userChoice)
+  }
+  return finalPassword;
+  }
+
+  function rgen (randomArray){
+   var randomIndex = Math.floor(Math.random() * randomArray.length)
+    return randomArray [randomIndex];
+  }
 
 
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
+    passwordText.value = password;
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  }
 
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);

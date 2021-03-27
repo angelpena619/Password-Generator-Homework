@@ -16,11 +16,11 @@ var finalPassword = "";
 function generatePassword() {
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
         passwordLength = prompt("How Many characters would you like your password to contanin? choose between 8 and 128 characters");
-        alert("Cannot leave blank, a value is required!");
+       // alert("Cannot leave blank, a value is required!");
   }
-
+  
   while (!upperCaseConfirm || !lowerCaseConfirm || !specialCharConfirm || !numbersConfirm) {
-    alert("you must choose!");
+    //alert("you must choose!");
     upperCaseConfirm = confirm("would you like to include upper case letters?");
     lowerCaseConfirm = confirm("would you like to include lower case letters?");
     specialCharConfirm = confirm("would you like to include special characters?");

@@ -1,5 +1,5 @@
 
-![](Assets\screenshot-password-gen.PNG)
+![](assets\screenshot-password-gen.PNG)
 
 
 # 03 JavaScript: Password Generator

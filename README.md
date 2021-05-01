@@ -45,4 +45,4 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ``
 
-! [screenshot](Password-Generator-Homework\Assets\screenshot-password-gen.PNG)
+![](Assets\screenshot-password-gen.PNG)

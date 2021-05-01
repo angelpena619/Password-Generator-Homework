@@ -1,3 +1,7 @@
+
+![](Assets\screenshot-password-gen.PNG)
+
+
 # 03 JavaScript: Password Generator
 for this homework assignment we where asked to set up a number of window prompts to determine a desired password based on the criteria.
 
@@ -44,5 +48,3 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ``
-
-![](Assets\screenshot-password-gen.PNG)
